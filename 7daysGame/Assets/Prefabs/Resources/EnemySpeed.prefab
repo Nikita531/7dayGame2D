@@ -140,10 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f469af42b5069a0469e4620eedcbb845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   speed: 8
   NSpeed: 8
-  agroDistance: 4
+  agroDistance: 100
   LocalScaleX: 0.5
   LocalScaleY: 0.5
   TimeDelay: 2

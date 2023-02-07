@@ -6,7 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     private Rigidbody2D physic;
 
-    public Transform player;
+    Transform player;
 
     public float speed;
     public float NSpeed;
@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour
     {
         //StartCoroutine(AnimAtackSpeedEnemy());
         physic = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
 
