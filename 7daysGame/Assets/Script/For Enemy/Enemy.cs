@@ -20,8 +20,8 @@ public class Enemy : MonoBehaviour
     private bool _isPlayerNear;
 
     private UnityEngine.Object explosion;
-
-
+    private UnityEngine.Object EnemyRef;
+    private SpriteRenderer SpriteRend;
 
     private void Start()
     {
@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
         _isPlayerNear = false;
 
         explosion = Resources.Load("Explosion");
+        EnemyRef = Resources.Load("EnemyNormal");
 
 
 
@@ -51,7 +52,10 @@ public class Enemy : MonoBehaviour
         {
             GameObject explosionRef = (GameObject)Instantiate(explosion);
             explosionRef.transform.position = new Vector2(transform.position.x, transform.position.y);
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
+
+            Invoke("Respawn", 5f);
         }
         transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
@@ -106,6 +110,16 @@ public class Enemy : MonoBehaviour
 
         }
 
+    }
+    void Respawn()
+    {
+        Debug.Log("work");
+        GameObject enemyCopy = (GameObject)Instantiate(EnemyRef);
+        enemyCopy.transform.position = transform.position;
+        health += 100; gameObject.SetActive(true);
+
+
+        Destroy(gameObject);
     }
 
 }
