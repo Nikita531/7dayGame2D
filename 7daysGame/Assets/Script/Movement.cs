@@ -37,19 +37,19 @@ public class Movement : MonoBehaviour
     }
 
 
-    void FixedUpdate()
-    {
+    //void //FixedUpdate()
+    //{
 
-        moveInput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveInput * Speed, rb.velocity.y);
-        if (facingRight == false && moveInput > 0)
-        {
-            Flip();
-        }
-        else if (facingRight == true && moveInput < 0)
-        {
-            Flip();
-        }
+    //moveInput = Input.GetAxis("Horizontal");
+    //rb.velocity = new Vector2(moveInput * Speed, rb.velocity.y);
+    //if (facingRight == false && moveInput > 0)
+    //{
+    //Flip();
+//}
+//else if (facingRight == true && moveInput < 0)
+//{
+//Flip();
+//}
         //if(moveInput == 0)
         //{
         //anim.SetBool("isRuning", false);
@@ -58,7 +58,7 @@ public class Movement : MonoBehaviour
         //{
         //anim.SetBool("isRuning", true);
         //}
-    }
+    //}
     private void Update()
     {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
