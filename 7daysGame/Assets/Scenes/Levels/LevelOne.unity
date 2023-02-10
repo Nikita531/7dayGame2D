@@ -3255,7 +3255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77abb93e1ea581941a45f7bba761a27d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pause: {fileID: 0}
+  pause: {fileID: 1732167680}
 --- !u!1 &1732167680
 GameObject:
   m_ObjectHideFlags: 0
@@ -3643,7 +3643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2762648093551323630, guid: 4688b8ea7a631af488b4f9ca103d9236, type: 3}
       propertyPath: m_Text
-      value: Bow
+      value: Arrows
       objectReference: {fileID: 0}
     - target: {fileID: 2762648093551323630, guid: 4688b8ea7a631af488b4f9ca103d9236, type: 3}
       propertyPath: m_Color.b
