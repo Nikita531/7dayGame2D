@@ -543,7 +543,7 @@ MonoBehaviour:
   GunScaleX: 0
   GunScaleY: 0
   GunScaleZ: 0
-  currentAmmo: 10
+  currentAmmo: 50
   allAmmo: 50
   ammoCount: {fileID: 608102909}
 --- !u!1 &843538734
