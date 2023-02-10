@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
         {
             GameObject explosionRef = (GameObject)Instantiate(explosion);
             explosionRef.transform.position = new Vector2(transform.position.x, transform.position.y);
-            //Destroy(gameObject);
+            Destroy(gameObject);
             gameObject.SetActive(false);
 
             Invoke("Respawn", 5f);
@@ -111,15 +111,17 @@ public class Enemy : MonoBehaviour
         }
 
     }
-    void Respawn()
-    {
-        Debug.Log("work");
-        GameObject enemyCopy = (GameObject)Instantiate(EnemyRef);
-        enemyCopy.transform.position = transform.position;
-        health += 100; gameObject.SetActive(true);
+    //void Respawn()
+    //{
+        //GameObject enemyCopy = (GameObject)Instantiate(EnemyRef);
+        //enemyCopy.transform.position = transform.position;
+        //health += 100; gameObject.SetActive(true);
+        //
+        //Debug.Log("work");
+        
 
 
-        Destroy(gameObject);
-    }
+        //Destroy(gameObject);
+    //}
 
 }
