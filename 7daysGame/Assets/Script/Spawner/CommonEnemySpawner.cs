@@ -1,14 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CommonEnemySpawner : MonoBehaviour
+public class CommonEnemySpawner : MonoBehaviour, IEnemySpawner
 {
     [SerializeField] float delayBeforeStart;
     [SerializeField] float delayWhileSpawn;
     [SerializeField] List<Enemy> enemiesForSpawn;
     [SerializeField] Vector3 transformForSpawn;
     private Coroutine _spawnCouratine;
+
+    public event IEnemySpawner.SpawnEnemy SpawnEnemyEvent;
 
     private void OnDisable()
     {
@@ -43,9 +46,9 @@ public class CommonEnemySpawner : MonoBehaviour
 
     private void EnemySpawn()
     {
-        int rn = Random.Range(0, enemiesForSpawn.Capacity);
+        int rn = UnityEngine.Random.Range(0, enemiesForSpawn.Capacity);
         Vector3 vectorToSpawn = new Vector3(transformForSpawn.x,transformForSpawn.y,transformForSpawn.z);
-        Instantiate(enemiesForSpawn[rn], vectorToSpawn, Quaternion.identity);
-        Debug.Log("Spawn");
+        Enemy enemy = Instantiate(enemiesForSpawn[rn], vectorToSpawn, Quaternion.identity);
+        SpawnEnemyEvent?.Invoke(enemy);
     }
 }

@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public event Action<Enemy> DeadEvent;
 
     private float timeBtwAttack;
     public float startTimeBtwAttack;
@@ -50,12 +52,12 @@ public class Enemy : MonoBehaviour
         }
         if (health <= 0)
         {
+            DeadEvent?.Invoke(this);
             GameObject explosionRef = (GameObject)Instantiate(explosion);
             explosionRef.transform.position = new Vector2(transform.position.x, transform.position.y);
             Destroy(gameObject);
             gameObject.SetActive(false);
-
-            Invoke("Respawn", 5f);
+            //Invoke("Respawn", 5f);
         }
         transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
