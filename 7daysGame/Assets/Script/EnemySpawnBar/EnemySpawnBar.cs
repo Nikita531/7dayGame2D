@@ -7,7 +7,9 @@ public class EnemySpawnBar : MonoBehaviour
 {
     private Image powerBarImage;
     private CommonEnemySpawner enemySpawner;
+    private EnemyCounter enemyCounter;
     private float fillToIncrease;
+    [SerializeField] private bool useDeathToCount;
 
     private void Start()
     {
@@ -17,9 +19,21 @@ public class EnemySpawnBar : MonoBehaviour
     private void OnEnable()
     {
         enemySpawner = FindObjectOfType<CommonEnemySpawner>();
+        enemyCounter = FindObjectOfType<EnemyCounter>();
         fillToIncrease = (float)1/enemySpawner.Count;
-        //Debug.Log(" enemySpawner.Count" + enemySpawner.Count);
-        enemySpawner.SpawnEnemyEvent += EnemySpawner_SpawnEnemyEvent;
+        if (useDeathToCount)
+        {
+            enemyCounter.DeadEnemyEvent += EnemyCounter_DeadEnemyEvent;
+        }
+        else
+        {
+            enemySpawner.SpawnEnemyEvent += EnemySpawner_SpawnEnemyEvent;
+        }
+    }
+
+    private void EnemyCounter_DeadEnemyEvent()
+    {
+        powerBarImage.fillAmount += fillToIncrease;
     }
 
     private void EnemySpawner_SpawnEnemyEvent(Enemy enemy)
