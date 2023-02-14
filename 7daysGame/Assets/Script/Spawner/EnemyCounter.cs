@@ -7,7 +7,6 @@ public class EnemyCounter : MonoBehaviour
     private IEnemySpawner enemySpawner;
     public List<Enemy> EnemyList;
     public List<string> DeadEnemyList;
-    public event Action DeadEnemyEvent;
 
     private void OnEnable()
     {
@@ -37,7 +36,6 @@ public class EnemyCounter : MonoBehaviour
     {
         EnemyList.Remove(enemy);
         DeadEnemyList.Add(enemy.gameObject.ToString());
-        DeadEnemyEvent?.Invoke();
     }
 
     public void DisableSpawner()
