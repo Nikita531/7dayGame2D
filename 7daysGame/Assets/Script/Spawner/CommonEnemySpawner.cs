@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class CommonEnemySpawner : MonoBehaviour, IEnemySpawner
 {
-    [SerializeField] float delayBeforeStart;
-    [SerializeField] float delayWhileSpawn;
-    [SerializeField] List<Enemy> enemiesForSpawn;
-    [SerializeField] Vector3 transformForSpawn;
+    public int Count { get { return count; } private set { } }
+    [SerializeField] private int count = 10;
+    [SerializeField] private float delayBeforeStart;
+    [SerializeField] private float delayWhileSpawn;
+    [SerializeField] private List<Enemy> enemiesForSpawn;
+    [SerializeField] private Vector3 transformForSpawn;
     private Coroutine _spawnCouratine;
 
     public event IEnemySpawner.SpawnEnemy SpawnEnemyEvent;
@@ -46,9 +48,14 @@ public class CommonEnemySpawner : MonoBehaviour, IEnemySpawner
 
     private void EnemySpawn()
     {
+        if (count == 0)
+        {
+            return;
+        }
         int rn = UnityEngine.Random.Range(0, enemiesForSpawn.Capacity);
         Vector3 vectorToSpawn = new Vector3(transformForSpawn.x,transformForSpawn.y,transformForSpawn.z);
         Enemy enemy = Instantiate(enemiesForSpawn[rn], vectorToSpawn, Quaternion.identity);
         SpawnEnemyEvent?.Invoke(enemy);
+        count--;
     }
 }
