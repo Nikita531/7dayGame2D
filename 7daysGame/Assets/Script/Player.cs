@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
 
         if (Healt <= 0)
         {
+            //TODO Create SceneManager
             SceneManager.LoadScene(0);
         }
     }

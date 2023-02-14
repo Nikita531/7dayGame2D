@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class CommonEnemySpawner : MonoBehaviour, IEnemySpawner
 {
-    public int Count { get { return count; } private set { } }
-    [SerializeField] private int count = 10;
+    public int InitialCount { get { return initialCount; } set { } }
+    [SerializeField] private int initialCount = 10;
+    public int Count { get { return count; } set { } }
+    private int count;
+
     [SerializeField] private float delayBeforeStart;
     [SerializeField] private float delayWhileSpawn;
     [SerializeField] private List<Enemy> enemiesForSpawn;
@@ -15,6 +18,11 @@ public class CommonEnemySpawner : MonoBehaviour, IEnemySpawner
 
     public event IEnemySpawner.SpawnEnemy SpawnEnemyEvent;
 
+
+    private void Start()
+    {
+        count = initialCount;
+    }
     private void OnDisable()
     {
         StopSpawn();

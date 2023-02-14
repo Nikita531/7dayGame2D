@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyCounter : MonoBehaviour
 {
@@ -8,10 +9,12 @@ public class EnemyCounter : MonoBehaviour
     public List<Enemy> EnemyList;
     public List<string> DeadEnemyList;
 
+    public event Action GameWinEvent;
+
     private void OnEnable()
     {
         SetCommonSpawner();
-        EnemyList = new List<Enemy>(10);
+        
     }
 
     private void OnDisable()
@@ -23,6 +26,7 @@ public class EnemyCounter : MonoBehaviour
     {
         enemySpawner = FindObjectOfType<CommonEnemySpawner>();
         enemySpawner.SpawnEnemyEvent += EnemySpawner_SpawnEnemyEvent;
+        EnemyList = new List<Enemy>(enemySpawner.InitialCount);
     }
 
     private void EnemySpawner_SpawnEnemyEvent(Enemy enemy)
@@ -36,7 +40,25 @@ public class EnemyCounter : MonoBehaviour
     {
         EnemyList.Remove(enemy);
         DeadEnemyList.Add(enemy.gameObject.ToString());
+        if (DeadEnemyList.Count == enemySpawner.InitialCount)
+        {
+            GameWinEvent?.Invoke();
+            //TODO Create SceneManager
+            SceneManager.LoadScene(0);
+        }
     }
+
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.J))
+    //    {
+    //        foreach (var enemy in EnemyList)
+    //        {
+    //            enemy.TakeDamage(100);
+    //        }
+    //        //Debug.Log("Kill them All");
+    //    }
+    //}
 
     public void DisableSpawner()
     {

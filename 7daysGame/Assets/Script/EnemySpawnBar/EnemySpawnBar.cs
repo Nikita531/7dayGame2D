@@ -17,7 +17,7 @@ public class EnemySpawnBar : MonoBehaviour
     private void OnEnable()
     {
         enemySpawner = FindObjectOfType<CommonEnemySpawner>();
-        fillToIncrease = (float)1/enemySpawner.Count;
+        fillToIncrease = (float)1/enemySpawner.InitialCount;
         //Debug.Log(" enemySpawner.Count" + enemySpawner.Count);
         enemySpawner.SpawnEnemyEvent += EnemySpawner_SpawnEnemyEvent;
     }
