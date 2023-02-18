@@ -19,7 +19,7 @@ public class GarbageGun : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             float enter;
-            Vector3 pos = Input.mousePosition;
+            Vector3 pos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             //Ray ray = mainCamera.ScreenPointToRay(pos);
             Vector2 speed = (pos - transform.position) * power;
             int number = Random.Range(0, garbagePrefabs.Count);
