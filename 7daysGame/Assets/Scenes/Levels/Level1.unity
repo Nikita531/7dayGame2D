@@ -240,7 +240,7 @@ MonoBehaviour:
   - {fileID: 4385139782773077596, guid: 82db4e8c80516a547a62736b1f771e5d, type: 3}
   - {fileID: -4858360089052996818, guid: 0691ac153c7a56d41ae51212d55172cd, type: 3}
   - {fileID: -7841181393027146958, guid: 3e0537faec669a44ea2ad243441bd400, type: 3}
-  power: 0.02
+  power: 2
 --- !u!4 &263352926
 Transform:
   m_ObjectHideFlags: 0
