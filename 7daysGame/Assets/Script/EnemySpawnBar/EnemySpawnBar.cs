@@ -22,10 +22,22 @@ public class EnemySpawnBar : MonoBehaviour
         enemySpawner.SpawnEnemyEvent += EnemySpawner_SpawnEnemyEvent;
     }
 
+
+    private IEnumerator SpawnBarCoroutine()
+    {
+        yield return null;
+        float endScore = powerBarImage.fillAmount + fillToIncrease;
+        while (powerBarImage.fillAmount < endScore)
+        {
+            powerBarImage.fillAmount += fillToIncrease/20;
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
     private void EnemySpawner_SpawnEnemyEvent(Enemy enemy)
     {
-        powerBarImage.fillAmount += fillToIncrease;
-        //Debug.Log("INCREACE" + " " + fillToIncrease + " " + powerBarImage.fillAmount);
+        
+        StartCoroutine(SpawnBarCoroutine());
     }
 
     private void OnDisable()
