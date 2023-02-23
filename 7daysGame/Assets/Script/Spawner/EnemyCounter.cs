@@ -44,7 +44,7 @@ public class EnemyCounter : MonoBehaviour
         {
             GameWinEvent?.Invoke();
             //TODO Create SceneManager
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("LevelsMenu");
         }
     }
 
