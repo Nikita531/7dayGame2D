@@ -3128,7 +3128,7 @@ MonoBehaviour:
   attackPos: {fileID: 1528433561}
   enemy:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 0
   attackRange: 1.13
   damage: 30
   anim: {fileID: 1423772100}
