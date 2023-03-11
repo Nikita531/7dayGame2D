@@ -1052,9 +1052,6 @@ PrefabInstance:
       addedObject: {fileID: 1571310069}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 71b1655016da01c43bfb2335f9c0cc1c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1571310077}
-    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 71b1655016da01c43bfb2335f9c0cc1c, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1571310076}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 71b1655016da01c43bfb2335f9c0cc1c, type: 3}
       insertIndex: -1
@@ -3383,7 +3380,7 @@ Animator:
   m_GameObject: {fileID: 1571310068}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f67458fccd64a8d4dab18220c7ab9570, type: 2}
+  m_Controller: {fileID: 9100000, guid: 13f08851ca48de74fa1d60f1578fcc3c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3504,8 +3501,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5509906, y: 0}
-  m_Size: {x: 2.1019812, y: 1.1439353}
+  m_Offset: {x: -5.7465315, y: 29.325752}
+  m_Size: {x: 74.85242, y: 74.85242}
   m_Direction: 0
 --- !u!50 &1571310076
 Rigidbody2D:
@@ -3534,58 +3531,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!212 &1571310077
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571310068}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b24b2e2472d24d54889da577d3cdc0f5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1001 &1587950479
 PrefabInstance:
   m_ObjectHideFlags: 0
