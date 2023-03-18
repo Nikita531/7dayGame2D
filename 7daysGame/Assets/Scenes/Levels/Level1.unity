@@ -1267,6 +1267,7 @@ MonoBehaviour:
   - {fileID: -7841181393027146958, guid: 3e0537faec669a44ea2ad243441bd400, type: 3}
   power: 2
   reloadBarImage: {fileID: 84878320}
+  anim: {fileID: 1571310069}
 --- !u!4 &263352926
 Transform:
   m_ObjectHideFlags: 0

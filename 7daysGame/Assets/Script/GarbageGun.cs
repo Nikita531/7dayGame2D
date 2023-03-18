@@ -14,6 +14,7 @@ public class GarbageGun : MonoBehaviour
     private float reloadBarValue;
 
     private Camera mainCamera;
+    public Animator anim;
 
     private void Start()
     {
@@ -60,6 +61,7 @@ public class GarbageGun : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && reloadBarValue > 0.1f)
         {
+            anim.SetTrigger("PlayerAttack");
             //float enter;
             Vector3 pos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             //Ray ray = mainCamera.ScreenPointToRay(pos);
@@ -68,7 +70,10 @@ public class GarbageGun : MonoBehaviour
             Rigidbody2D garbageBullet = Instantiate(garbagePrefabs[number], transform.position, Quaternion.identity).GetComponent<Rigidbody2D>();
             garbageBullet.AddForce(speed, ForceMode2D.Impulse);
             ChangeReloadBarValue();
-
         }
+    }
+    public void OnAttack()
+    {
+            
     }
 }
